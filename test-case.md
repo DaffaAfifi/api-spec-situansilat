@@ -1,5 +1,7 @@
 # Test-Case Situansilat API Spec
 
+![alt text for screen readers](situansilat-dark.png "Text to show on mouseover")
+
 ## 1. Get All Users API (Low)
 
 Endpoint : GET /api/users
