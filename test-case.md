@@ -2,7 +2,41 @@
 
 ![alt text for screen readers](situansilat-dark.png "Text to show on mouseover")
 
-## 1. Get All Users API (Low)
+## 1. Login (High)
+
+Endpoint : POST /api/login
+
+Headers :
+- Authorization : token
+
+Request Body :
+
+```json
+{
+    "email" : "daffafifi@gmail.com",
+    "password" : "12345678",
+}
+```
+
+Response Body Success :
+
+```json
+{
+    "data" : {
+        "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    }
+}
+```
+
+Response Body Error :
+
+```json
+{
+    "errors" : "Email is not valid format"
+}
+```
+
+## 2. Get All Users API (Low)
 
 Endpoint : GET /api/users
 
@@ -54,7 +88,7 @@ Response Body Error :
 }
 ```
 
-## 2. Get User by ID API (Low)
+## 3. Get User by ID API (Low)
 
 Endpoint : GET /api/users/:id
 
@@ -90,7 +124,7 @@ Response Body Error :
 }
 ```
 
-## 3. Get User Saved News API (Mid)
+## 4. Get User Saved News API (Mid)
 
 Endpoint : GET /api/users-saved-news/:id
 
@@ -144,7 +178,7 @@ Response Body Error :
 }
 ```
 
-## 4. Get User Facilities API (High)
+## 5. Get User Facilities API (High)
 
 Endpoint : GET /api/users-facilities/:id
 
@@ -227,7 +261,7 @@ Response Body Error :
 }
 ```
 
-## 5. Create User API (Low)
+## 6. Create User API (Low)
 
 Endpoint : POST /api/users
 
@@ -281,7 +315,7 @@ Response Body Error :
 }
 ```
 
-## 6. Add Tool to Help API - Trigger Tool Stock (Mid)
+## 7. Add Tool to Help API - Trigger Tool Stock (Mid)
 
 Endpoint : POST /api/add-tools
 
@@ -327,7 +361,7 @@ Response Body Error :
 }
 ```
 
-## 7. Update User API (Low)
+## 8. Update User API (Low)
 
 Endpoint : PUT /api/users/:id
 
@@ -380,7 +414,7 @@ Response Body Error :
 }
 ```
 
-## 8. Update Tools Quantity API - Trigger Tool Stock (Mid)
+## 9. Update Tools Quantity API - Trigger Tool Stock (Mid)
 
 Endpoint : PUT /api/add-tools
 
@@ -426,7 +460,7 @@ Response Body Error :
 }
 ```
 
-## 9. Remove News API (Low)
+## 10. Remove News API (Low)
 
 Endpoint : DELETE /api/news/:id
 
@@ -445,11 +479,11 @@ Response Body Error :
 
 ```json
 {
-    "errors" : "Contact is not found"
+    "errors" : "News is not found"
 }
 ```
 
-## 10. Remove Multiple News API (Mid)
+## 11. Remove Multiple News API (Mid)
 
 Endpoint : DELETE /api/news/[:id, :id]
 
@@ -468,6 +502,6 @@ Response Body Error :
 
 ```json
 {
-    "errors" : "Contact is not found"
+    "errors" : "News is not found"
 }
 ```
