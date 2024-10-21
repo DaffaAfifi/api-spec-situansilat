@@ -2,7 +2,7 @@
 
 ![alt text for screen readers](situansilat-dark.png "Text to show on mouseover")
 
-## 1. Login (High)
+## 1. Login (Mid)
 
 Endpoint : POST /api/login
 
@@ -23,8 +23,15 @@ Response Body Success :
 
 ```json
 {
-  "payload": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-  "message": "Login success"
+  "payload": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAyLCJlbWFpbCI6Im5hbmFuZ2hlckBnbWFpbC5jb20iLCJuYW1hIjoiTmFuYW5nIEhlcml5YW50byIsInJvbGUiOjIsImV4cCI6MTcyOTQ5MTAzNn0.fEOEPkUMFspg5TL_4Y1J90Ct3bxqQr-PGk8PXiKmKic"
+  },
+  "message": "success login",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
@@ -32,7 +39,7 @@ Response Body Error :
 
 ```json
 {
-  "errors": "Email is not valid format"
+  "error": "Email or password is incorrect"
 }
 ```
 
@@ -78,7 +85,12 @@ Response Body Success :
       "business": "Taylor"
     }
   ],
-  "message": "Get users succes"
+  "message": "Get users succes",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
@@ -116,7 +128,12 @@ Response Body Success :
     "age": 21,
     "business": "Barbershop"
   },
-  "message": "Get user success"
+  "message": "Get user success",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
@@ -130,7 +147,7 @@ Response Body Error :
 
 ## 4. Get User Saved News API (Mid)
 
-Endpoint : GET /api/users-saved-news/:id
+Endpoint : GET /api/users/saved-news/:id
 
 Headers :
 
@@ -172,7 +189,12 @@ Response Body Success :
       }
     ]
   },
-  "message": "Get saved news success"
+  "message": "Get saved news success",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
@@ -184,7 +206,72 @@ Response Body Error :
 }
 ```
 
-## 5. Get User Facilities API (High)
+## 5. Get User Saved News Comment API (High)
+
+Endpoint : GET /api/users/saved-news/comment/:id
+
+Headers :
+
+- Authorization : token
+
+Response Body Success :
+
+```json
+{
+  "payload": {
+    "id": 1,
+    "name": "Daffa Afifi Syahrony",
+    "email": "daffafifi@gmail.com",
+    "NIK": "1234567891011121",
+    "address": "Tempurejo, Jember",
+    "phone": "089538550152",
+    "gender": "L",
+    "head_of_the_house": 0,
+    "place_of_birth": "Jember",
+    "date_of_birth": "05-02-2003",
+    "age": 21,
+    "business": "Barbershop",
+    "berita_tersimpan": [
+      {
+        "id": 1,
+        "image": "news1.png",
+        "title": "5 hair style for 2024",
+        "subtitle": "Lorem ipsum dolor sit amet",
+        "body": "Lorem ipsum dolor sit amet...",
+        "created_at": "20-05-2024",
+        "comment": [
+          {
+            "comment": "Saya tertarik untuk ikut serta di pelatihan ini.",
+            "user": "77",
+            "created_at": "2024-09-17 04:23:04"
+          },
+          {
+            "comment": "Informasi yang menarik, terima kasih.",
+            "user": "11",
+            "created_at": "2024-09-17 04:23:04"
+          }
+        ]
+      }
+    ]
+  },
+  "message": "Get saved news comment success",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
+}
+```
+
+Response Body Error :
+
+```json
+{
+  "errors": "Users is not found"
+}
+```
+
+## 6. Get User Facilities API (High)
 
 Endpoint : GET /api/users-facilities/:id
 
@@ -257,7 +344,12 @@ Response Body Success :
       }
     ]
   },
-  "message": "Get facilities success"
+  "message": "Get facilities success",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
@@ -269,7 +361,7 @@ Response Body Error :
 }
 ```
 
-## 6. Create User API (Low)
+## 7. Create User API (Low)
 
 Endpoint : POST /api/users
 
@@ -299,16 +391,13 @@ Response Body Success :
 
 ```json
 {
-  "payload": {
-    "fieldCount": 0,
-    "affectedRows": 1,
-    "insertId": 112,
-    "info": "",
-    "serverStatus": 2,
-    "warningStatus": 0,
-    "changedRows": 0
+  "message": "User created successfully",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
   },
-  "message": "Register success"
+  "payload": null
 }
 ```
 
@@ -320,7 +409,7 @@ Response Body Error :
 }
 ```
 
-## 7. Add Tool to Help API - Trigger Tool Stock (Mid)
+## 8. Add Tool to Assistance Tools - Trigger Total Harga (High)
 
 Endpoint : POST /api/add-tools
 
@@ -342,16 +431,13 @@ Response Body Success :
 
 ```json
 {
-  "payload": {
-    "fieldCount": 0,
-    "affectedRows": 1,
-    "insertId": 112,
-    "info": "",
-    "serverStatus": 2,
-    "warningStatus": 0,
-    "changedRows": 0
+  "message": "Tools added successfully",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
   },
-  "message": "Add tools success"
+  "payload": null
 }
 ```
 
@@ -363,7 +449,7 @@ Response Body Error :
 }
 ```
 
-## 8. Update User API (Low)
+## 9. Update User API (Low)
 
 Endpoint : PUT /api/users/:id
 
@@ -393,16 +479,13 @@ Response Body Success :
 
 ```json
 {
-  "payload": {
-    "fieldCount": 0,
-    "affectedRows": 1,
-    "insertId": 112,
-    "info": "",
-    "serverStatus": 2,
-    "warningStatus": 0,
-    "changedRows": 0
+  "message": "User udated successfully",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
   },
-  "message": "Update user success"
+  "payload": null
 }
 ```
 
@@ -414,86 +497,44 @@ Response Body Error :
 }
 ```
 
-## 9. Update Tools Quantity API - Trigger Tool Stock (Mid)
+## 5. Get News Comment by ID (Mid)
 
-Endpoint : PUT /api/add-tools
+Endpoint : GET /api/users/news/comment/:id
 
 Headers :
 
 - Authorization : token
-
-Request Body :
-
-```json
-{
-  "help_id": 1,
-  "tool_id": 1,
-  "qty": 3
-}
-```
 
 Response Body Success :
 
 ```json
 {
   "payload": {
-    "fieldCount": 0,
-    "affectedRows": 1,
-    "insertId": 112,
-    "info": "",
-    "serverStatus": 2,
-    "warningStatus": 0,
-    "changedRows": 0
+    "id": 1,
+    "image": "news1.png",
+    "title": "5 hair style for 2024",
+    "subtitle": "Lorem ipsum dolor sit amet",
+    "body": "Lorem ipsum dolor sit amet...",
+    "created_at": "20-05-2024",
+    "comment": [
+      {
+        "comment": "Saya tertarik untuk ikut serta di pelatihan ini.",
+        "user": "77",
+        "created_at": "2024-09-17 04:23:04"
+      },
+      {
+        "comment": "Informasi yang menarik, terima kasih.",
+        "user": "11",
+        "created_at": "2024-09-17 04:23:04"
+      }
+    ]
   },
-  "message": "Update tools qty success"
-}
-```
-
-Response Body Error :
-
-```json
-{
-  "errors": "Qty should be a number"
-}
-```
-
-## 10. Remove News API (Low)
-
-Endpoint : DELETE /api/news/:id
-
-Headers :
-
-- Authorization : token
-
-Response Body Success :
-
-```json
-{
-  "data": "OK"
-}
-```
-
-Response Body Error :
-
-```json
-{
-  "errors": "News is not found"
-}
-```
-
-## 11. Remove Multiple News API (Mid)
-
-Endpoint : DELETE /api/news/[:id, :id]
-
-Headers :
-
-- Authorization : token
-
-Response Body Success :
-
-```json
-{
-  "data": "OK"
+  "message": "Get news comment success",
+  "metadata": {
+    "current": "",
+    "next": "",
+    "prev": ""
+  }
 }
 ```
 
