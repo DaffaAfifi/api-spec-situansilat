@@ -497,7 +497,7 @@ Response Body Error :
 }
 ```
 
-## 5. Get News Comment by ID (Mid)
+## 10. Get News Comment by ID (Mid)
 
 Endpoint : GET /api/users/news/comment/:id
 
